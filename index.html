@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102f52">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Bank Demo">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Banking Demo</title>
+</head>
+<body>
+  <div class="demo-ribbon">DEMO · NOT A REAL BANK</div>
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <div class="brand"><span class="brand-mark">B</span><span>Banking <b>Demo</b></span></div>
+    <button class="avatar" id="profileBtn" aria-label="Profile">JD</button>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-page="overview">Overview</button>
+    <button class="tab" data-page="accounts">Accounts</button>
+    <button class="tab" data-page="payments">Payments</button>
+    <button class="tab" data-page="cards">Cards</button>
+  </nav>
+
+  <main id="app" class="app">
+    <section class="welcome">
+      <div><p class="eyebrow">PERSONAL BANKING · DEMO</p><h1 id="greeting">Good morning, Jamie</h1><p class="muted">Here’s your financial overview.</p></div>
+      <div class="date" id="today"></div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="balance-card">
+        <div class="card-head"><span>Total account balance</span><span class="pill">SEK</span></div>
+        <div class="big-balance" id="totalBalance">125,000.00</div>
+        <div class="balance-foot"><span>Available balance</span><b id="availableBalance">118,500.00 SEK</b></div>
+      </article>
+      <article class="mini-card"><span class="muted">Pending payments</span><strong id="pendingTotal">6,500.00 SEK</strong><small>Reserved in this demo</small></article>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><div><p class="eyebrow">YOUR BANKING</p><h2>Accounts</h2></div><button class="text-btn" data-go="accounts">View all →</button></div>
+      <div id="accountCards" class="account-list"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><div><p class="eyebrow">LATEST ACTIVITY</p><h2>Recent transactions</h2></div><button class="text-btn" data-go="transactions">See all →</button></div>
+      <div id="recentTransactions" class="transaction-list"></div>
+    </section>
+    <footer>Banking Demo is a fictional simulator. No real accounts, payments or banking services are connected.</footer>
+  </main>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head"><b>Menu</b><button id="closeDrawer">✕</button></div>
+    <button data-go="overview">Overview</button><button data-go="accounts">Accounts</button>
+    <button data-go="transactions">Transactions</button><button data-go="payments">Payments & transfers</button>
+    <button data-go="cards">Cards</button><button data-go="settings">Settings</button>
+    <button data-go="admin" class="admin-link">Demo administration</button>
+    <p class="drawer-note">DEMO ENVIRONMENT ONLY</p>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
